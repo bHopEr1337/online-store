@@ -1,0 +1,40 @@
+{% extends 'frontMain/base.html' %}
+{% load static %}
+
+{% block sale %}
+  <section class="sale_section layout_padding">
+    <div class="container-fluid">
+      <div class="heading_container">
+        <h2>
+          House For Sale
+        </h2>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the
+        </p>
+      </div>
+      <div class="sale_container">
+        {% for i in products %}
+        <div class="box">
+          <div class="img-box">
+            <img src="{{i.image.url}}" alt="">
+          </div>
+          <div class="detail-box">
+            <h6>
+              {{i.name}}
+            </h6>
+            <p>
+              {{i.description}}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Find More
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

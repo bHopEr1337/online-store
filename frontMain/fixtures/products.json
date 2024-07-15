@@ -1,0 +1,62 @@
+[
+  {
+    "model": "frontMain.product",
+    "pk": 1,
+    "fields": {
+      "name": "Необычное здание",
+      "category": "APERTMENTS HOUSE",
+      "description": "There are many variations of passages of Lorem Ipsum available, but",
+      "image": "products_images/s-1.jpg"
+    }
+  },
+  {
+    "model": "frontMain.product",
+    "pk": 2,
+    "fields": {
+      "name": "Уютная квартира",
+      "category": "APERTMENTS HOUSE",
+      "description": "There are many variations of passages of Lorem Ipsum available, but",
+      "image": "products_images/s-2.jpg"
+    }
+  },
+  {
+    "model": "frontMain.product",
+    "pk": 3,
+    "fields": {
+      "name": "Ещё одно здание",
+      "category": "APERTMENTS HOUSE",
+      "description": "Прекрасная квартира с видом на море. Просто великолепно!",
+      "image": "products_images/s-3.jpg"
+    }
+  },
+  {
+    "model": "frontMain.product",
+    "pk": 4,
+    "fields": {
+      "name": "Супер новостройка",
+      "category": "APERTMENTS HOUSE",
+      "description": "Гений архитектурной мысли.",
+      "image": "products_images/s-4.jpg"
+    }
+  },
+  {
+    "model": "frontMain.product",
+    "pk": 5,
+    "fields": {
+      "name": "Творение богов",
+      "category": "APERTMENTS HOUSE",
+      "description": "Хороший и практичный дом",
+      "image": "products_images/s-5.jpg"
+    }
+  },
+  {
+    "model": "frontMain.product",
+    "pk": 6,
+    "fields": {
+      "name": "Классная студия",
+      "category": "APERTMENTS HOUSE",
+      "description": "Подойдёт всем!",
+      "image": "products_images/s-6.jpg"
+    }
+  }
+]
