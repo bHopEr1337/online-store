@@ -1,4 +1,7 @@
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 class Product(models.Model):
     name = models.CharField(max_length=256)
@@ -8,3 +11,20 @@ class Product(models.Model):
 
     def __str__(self):
         return f"Название: {self.name}"
+
+
+class User_feedback(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    phone_number = models.CharField(max_length=50)
+    text_body = models.CharField(max_length=250)
+    publish = models.DateTimeField(default=timezone.now())
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    # author = models.ForeignKey(User,
+    #                            on_delete=models.CASCADE,
+    #                            related_name='user_feedback')
+
+    def __str__(self):
+        return f"Запрос от: {self.name}"
+

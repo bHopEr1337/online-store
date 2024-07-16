@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from frontMain.models import Product
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from frontMain.forms import EmailContactForm
+from frontMain.models import User_feedback
 
 
 def index(request):
@@ -11,8 +14,27 @@ def index(request):
 def about(request):
     return render(request, template_name='frontMain/about.html')
 
+# TODO: Тут будет передаваться форма для обратной связи
 def contact(request):
-    return render(request, template_name='frontMain/contact.html')
+    sent = False
+    if request.method == 'POST':
+        form = EmailContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            subject = f"{cd['name']} sent feedback "
+            message = f"{cd['text_body']} \nTo contact me:\n{cd['phone_number']}\n{cd['email']}"
+            send_mail(subject, message, cd['email'], ["pkuslin9@gmail.com"])
+            sent = True
+
+            feedback = User_feedback(name=cd['name'],email=cd['email'],phone_number=cd['phone_number'],text_body=cd['text_body'])
+            feedback.save()
+
+
+
+    else:
+        form = EmailContactForm()
+    return render(request, template_name='frontMain/contact.html', context={'form': form,
+                                                                            'sent': sent})
 
 def house(request):
     post_list = Product.objects.all()
