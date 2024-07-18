@@ -40,34 +40,8 @@ def contact(request):
     return render(request, template_name='frontMain/contact.html', context={'form': form,
                                                                             'sent': sent,
                                                                             })
-
 def test(request):
     return render(request, template_name='frontMain/feedback_result.html')
-
-
-# def contact_form_submit(request):
-#     if request.method == 'POST':
-#         form = EmailContactForm(request.POST)
-#         if form.is_valid():
-#             cd = form.cleaned_data
-#             subject = f"{cd['name']} sent feedback "
-#             message = f"{cd['text_body']} \nTo contact me:\n{cd['phone_number']}\n{cd['email']}"
-#             send_mail(subject, message, cd['email'], ["pkuslin9@gmail.com"])
-#
-#             feedback = User_feedback(
-#                 name=cd['name'],
-#                 email=cd['email'],
-#                 phone_number=cd['phone_number'],
-#                 text_body=cd['text_body']
-#             )
-#             feedback.save()
-#             return redirect('feedback_result')
-#     return redirect('contact')
-#
-# def feedback_result(request):
-#     return render(request, 'frontMain/feedback_result.html')
-
-
 
 
 def house(request):
